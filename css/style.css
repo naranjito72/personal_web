@@ -1,0 +1,851 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Lato:400|Montserrat:600,700,800,900&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Oswald:400,500,600,700&display=swap");
+html {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  scroll-behavior: smooth;
+}
+
+html body {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 85vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: whitesmoke;
+  font-family: "Lato", Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 100%;
+  color: #333;
+}
+
+html body .container {
+  background-color: transparent;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 80vw;
+      grid-template-columns: 80vw;
+}
+
+html body .container .progresoBarra {
+  height: 5px;
+  /* Can be anything */
+  position: relative;
+  background: #59a0e7;
+  border-radius: 25px;
+  padding: 8px;
+  -webkit-box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.3);
+          box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.3);
+}
+
+html body .container .progresoBarra .progresoBarra > div {
+  display: block;
+  height: 100%;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background-color: #2bc253;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(bottom, center), color-stop(37%, #2bc253), color-stop(69%, #54f054));
+  background-image: linear-gradient(center bottom, #2bc253 37%, #54f054 69%);
+  -webkit-box-shadow: inset 0 2px 9px rgba(255, 255, 255, 0.3), inset 0 -2px 6px rgba(0, 0, 0, 0.4);
+          box-shadow: inset 0 2px 9px rgba(255, 255, 255, 0.3), inset 0 -2px 6px rgba(0, 0, 0, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+html body .container .barra {
+  font-family: "Montserrat", Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 120%;
+  font-weight: bold;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 80vw;
+  padding: 0;
+  margin: 0;
+  z-index: 3;
+}
+
+html body .container .barra .navegador {
+  padding: 0;
+  margin: 0;
+  width: 80vw;
+}
+
+html body .container .barra .navegador ul.boton {
+  width: 80vw;
+  height: 10vh;
+  background-color: #285888;
+  padding: 0;
+  margin: 0;
+  -webkit-box-shadow: 1px 2px 5px #333333;
+          box-shadow: 1px 2px 5px #333333;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  list-style-type: none;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  top: 0;
+}
+
+html body .container .barra .navegador ul.boton li {
+  list-style-type: none;
+  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+}
+
+html body .container .barra .navegador ul.boton li a {
+  text-decoration: none;
+  list-style-type: none;
+  color: #e9e6e6;
+}
+
+html body .container .barra .navegador ul.boton li:hover {
+  list-style-type: none;
+  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
+}
+
+html body .container .barra .navegador ul.boton li:hover a:hover {
+  text-shadow: 0px 1px 5px #3f3f3f;
+  color: #a19d9d;
+}
+
+html body .container .presentacion {
+  /* display: grid;
+             grid-template-columns: 1fr 2fr;
+             grid-template-rows: 1fr 2fr;
+             grid-template-areas: 'titulos titulos', 'quien quien';*/
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  background-color: white;
+  margin-top: 9vh;
+  -webkit-box-shadow: 0px 5px 8px #888888;
+          box-shadow: 0px 5px 8px #888888;
+  /*Los dos displays me aportan el mismo resultado en pantalla grande, ¿será igual en max-width?*/
+}
+
+html body .container .presentacion .titulos {
+  width: 33%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+html body .container .presentacion .titulos img {
+  width: 18vw;
+  height: auto;
+  -webkit-box-shadow: 0px 5px 8px #888888;
+          box-shadow: 0px 5px 8px #888888;
+  transition: all 0.9s ease-in-out;
+  -webkit-transition: all 0.9s ease-in-out;
+  -moz-transition: all 0.9s ease-in-out;
+  -ms-transition: all 0.9s ease-in-out;
+  -o-transition: all 0.9s ease-in-out;
+}
+
+html body .container .presentacion .titulos img:hover {
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+}
+
+html body .container .presentacion .titulos a {
+  text-decoration: none;
+  list-style-type: none;
+  color: #59a0e7;
+  font-size: 120%;
+  transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+}
+
+html body .container .presentacion .titulos a:hover {
+  color: #333333;
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+}
+
+html body .container .presentacion .quien {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 50%;
+  height: auto;
+}
+
+html body .container .presentacion .quien h1 {
+  font-family: "Oswald", -apple-system, "Segoe UI", "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 700;
+  font-weight: lighter;
+  letter-spacing: 2px;
+  color: #5d90c4;
+}
+
+html body .container .presentacion .quien h1 span {
+  /* color:rgb(161, 157, 157);*/
+  color: #333333;
+  letter-spacing: 1px;
+  font-weight: lighter;
+}
+
+html body .container .presentacion .quien h3 {
+  font-weight: lighter;
+  color: #a19d9d;
+  letter-spacing: 3px;
+}
+
+html body .container .presentacion .quien #escrito {
+  font-family: "Oswald", sans-serif;
+  font-size: 500;
+  font-weight: lighter;
+  line-height: 2;
+}
+
+html body .container .presentacion .datos {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+html body .container .presentacion .datos ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+html body .container .presentacion .datos ul li {
+  font-size: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1, 2;
+          order: 1, 2;
+}
+
+html body .container .presentacion .datos ul li span:empty {
+  width: 3vw;
+}
+
+html body .container .presentacion .datos ul li .enunciado {
+  font-weight: lighter;
+  color: #a19d9d;
+}
+
+html body .container .presentacion .datos ul li .respuesta a {
+  text-decoration: none;
+  list-style-type: none;
+  color: #333333;
+}
+
+html body .container header {
+  margin-top: 9vh;
+  /* grid */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+html body .container main {
+  display: -ms-grid;
+  display: grid;
+}
+
+html body .container main .titulosH2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  font-family: "Oswald", Verdana, Geneva, Tahoma, sans-serif;
+  color: #5d90c4;
+  margin-top: 9vh;
+}
+
+html body .container main .titulosH2 h2 {
+  font-family: "Oswald", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  text-transform: uppercase;
+  font-size: 250%;
+  font-weight: lighter;
+  letter-spacing: 2px;
+}
+
+html body .container main .containerCentro {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+  -ms-grid-rows: (minmax(240px, 1fr))[auto-fit];
+      grid-template-rows: repeat(auto-fit, minmax(240px, 1fr));
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+html body .container main .containerCentro .posicionEducacion {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+html body .container main .containerCentro .posicionEducacion .escuelas {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 35vw;
+  height: auto;
+  background-color: white;
+  margin-top: 9vh;
+  -webkit-box-shadow: 0px 5px 8px #888888;
+          box-shadow: 0px 5px 8px #888888;
+  padding: 0 2vw 0 2vw;
+}
+
+html body .container main .containerCentro .posicionEducacion .escuelas ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding: 0;
+}
+
+html body .container main .containerCentro .posicionEducacion .escuelas ul li {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+html body .container main .containerCentro .posicionEducacion .escuelas ul li span {
+  color: #8b8a8a;
+}
+
+html body .container main .galeria {
+  margin-top: 4vh;
+}
+
+html body .container main .galeria ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  list-style-type: none;
+  margin: 0 -16px;
+  padding: 8px;
+}
+
+html body .container main .galeria li {
+  width: 50%;
+  padding: 8px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html body .container main .galeria li:last-child {
+  float: none;
+}
+
+html body .container main .galeria figure {
+  margin: 0;
+  position: relative;
+}
+
+html body .container main .galeria figcaption {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  background: rgba(93, 144, 196, 0.7);
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+
+html body .container main .galeria figure:hover figcaption {
+  opacity: 1;
+}
+
+html body .container main .galeria figcaption a {
+  font-family: "Oswald", Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 550%;
+  font-weight: lighter;
+  padding: 1vh 3vw 1vh 3vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: white;
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  /* align horizontal */
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /* align vertical */
+}
+
+html body .container main .galeria img {
+  max-width: 100%;
+  display: block;
+}
+
+html body .container main #habilidades {
+  width: 80vw;
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+
+html body .container main #habilidades .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0;
+  margin: 0;
+}
+
+html body .container main #habilidades .row .habilidades1 {
+  width: 30vw;
+  height: auto;
+  background-color: white;
+  margin-top: 9vh;
+  -webkit-box-shadow: 0px 5px 8px #888888;
+          box-shadow: 0px 5px 8px #888888;
+  padding: 3vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+html body .container main #habilidades .row .habilidades1 .encajeHab {
+  width: 30vw;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+}
+
+html body .container main #habilidades .row .habilidades1 .encajeHab .tituloBarra {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 29vw;
+  height: auto;
+}
+
+html body .container main #habilidades .row .habilidades1 .encajeHab .progresoBarra {
+  margin-bottom: 2vh;
+}
+
+html body .container main #habilidades .row .titulosH3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #285888;
+  font-family: "Oswald", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 150%;
+  font-weight: lighter;
+}
+
+html body .container main #habilidades .row .habilidades2 {
+  width: 30vw;
+  height: auto;
+  background-color: white;
+  margin-top: 9vh;
+  -webkit-box-shadow: 0px 5px 8px #888888;
+          box-shadow: 0px 5px 8px #888888;
+  padding: 3vw;
+  padding-top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+html body .container main #habilidades .row .habilidades2 .encajeHab2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+html body .container main #habilidades .row .habilidades2 .encajeHab2 .posicionCirculos {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  margin-bottom: 10vh;
+  margin-top: 10vh;
+}
+
+html body .container main #habilidades .row .habilidades2 .encajeHab2 .posicionCirculos .circulosInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+html body .container main #habilidades .row .habilidades2 .encajeHab2 .posicionCirculos .circulosInfo .texto {
+  margin-left: 2vw;
+  font-family: "Montserrat", Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 500;
+}
+
+html body .container main #habilidades .row .habilidades2 .encajeHab2 .adquiridas {
+  width: 29vw;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+html body .container main #habilidades .row .habilidades2 .encajeHab2 .adquiridas .cajonAdq {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 3vh;
+}
+
+html body .container footer {
+  width: 80vw;
+  height: auto;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+html body .container footer #contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-top: 9vh;
+  margin-bottom: 5vh;
+}
+
+html body .container footer #contact h4 {
+  font-family: 'Oswald',-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-style: "";
+  font-size: 150%;
+  font-weight: ligther;
+}
+
+html body .container footer #contact .ultimo1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: white;
+  -webkit-box-shadow: 0px 5px 8px #888888;
+          box-shadow: 0px 5px 8px #888888;
+  width: 30vw;
+  border: 1px solid white;
+  border-radius: 20px;
+  height: auto;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+
+html body .container footer #contact .ultimo1 .mensaje {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+html body .container footer #contact .ultimo1 .mensaje i {
+  color: #285888;
+  font-size: 350%;
+}
+
+html body .container footer #contact ul {
+  list-style: none;
+}
+
+html body .container footer #contact .redes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+}
+
+html body .container footer .ultimo2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: white;
+  -webkit-box-shadow: 0px 5px 8px #888888;
+          box-shadow: 0px 5px 8px #888888;
+  width: 30vw;
+  border: 1px solid white;
+  border-radius: 20px;
+  height: auto;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+
+html body .container footer .ultimo2 .redes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 30vw;
+}
+
+html body .container footer .ultimo2 .redes .iconsRed ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+html body .container footer .ultimo2 .redes .iconsRed ul i {
+  color: #285888;
+  font-size: 300%;
+}
+
+html body .container footer .copyright {
+  width: 80vw;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 3vh;
+}
+/*# sourceMappingURL=style.css.map */

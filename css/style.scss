@@ -1,0 +1,557 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:400|Montserrat:600,700,800,900&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Oswald:400,500,600,700&display=swap");
+html {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  scroll-behavior: smooth;
+
+  body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 85vw;
+    //height: auto;
+    display: flex;
+    justify-content: center;
+    background-color: whitesmoke;
+    font-family: "Lato", Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 100%;
+    color: #333;
+    .container {
+      background-color: transparent;
+      display: grid;
+      grid-template-columns: 80vw;
+      //grid-template-rows: 2fr 4fr 1fr;
+
+      .progresoBarra {
+        height: 5px; /* Can be anything */
+        position: relative;
+        background: rgb(89, 160, 231);
+        -moz-border-radius: 25px;
+        -webkit-border-radius: 25px;
+        border-radius: 25px;
+        padding: 8px;
+        box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.3);
+        .progresoBarra > div {
+          display: block;
+          height: 100%;
+          border-top-right-radius: 8px;
+          border-bottom-right-radius: 8px;
+          border-top-left-radius: 20px;
+          border-bottom-left-radius: 20px;
+          background-color: rgb(43, 194, 83);
+          background-image: linear-gradient(center bottom, rgb(43, 194, 83) 37%, rgb(84, 240, 84) 69%);
+          box-shadow: inset 0 2px 9px rgba(255, 255, 255, 0.3), inset 0 -2px 6px rgba(0, 0, 0, 0.4);
+          position: relative;
+          overflow: hidden;
+        }
+      } //progreso barra
+      .barra {
+        font-family: "Montserrat", Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 120%;
+        font-weight: bold;
+        display: inline-flex;
+        justify-content: flex-start;
+        width: 80vw;
+        padding: 0;
+        margin: 0;
+        z-index: 3;
+
+        .navegador {
+          padding: 0;
+          margin: 0;
+          width: 80vw;
+
+          ul.boton {
+            width: 80vw;
+            height: 10vh;
+            background-color: rgb(40, 88, 136);
+            padding: 0;
+            margin: 0;
+            box-shadow: 1px 2px 5px rgb(51, 51, 51);
+            display: inline-flex;
+            list-style-type: none;
+            flex-flow: row wrap;
+            justify-content: space-around;
+            align-items: center;
+            position: fixed;
+            top: 0;
+
+            li {
+              list-style-type: none;
+              // margin-left: 2em;
+              transition: all 0.2s ease-in-out;
+              -webkit-transition: all 0.2s ease-in-out;
+              -moz-transition: all 0.2s ease-in-out;
+              -ms-transition: all 0.2s ease-in-out;
+              -o-transition: all 0.2s ease-in-out;
+
+              a {
+                //text-shadow: 0px 2px 5px rgb(168, 168, 168);
+                text-decoration: none;
+                list-style-type: none;
+                color: rgb(233, 230, 230);
+              } //a
+            } //ul.boton li
+            li:hover {
+              list-style-type: none;
+              transform: scale(1.2);
+              -webkit-transform: scale(1.2);
+              -moz-transform: scale(1.2);
+              -ms-transform: scale(1.2);
+              -o-transform: scale(1.2);
+              a:hover {
+                text-shadow: 0px 1px 5px rgb(63, 63, 63);
+                color: rgb(161, 157, 157);
+              }
+            } //li:hover
+          } //ul.boton
+        } //.navegador
+      } //.barra
+
+      .presentacion {
+        /* display: grid;
+             grid-template-columns: 1fr 2fr;
+             grid-template-rows: 1fr 2fr;
+             grid-template-areas: 'titulos titulos', 'quien quien';*/
+
+        display: flex;
+        justify-content: space-around;
+        flex-flow: row wrap;
+        background-color: white;
+        margin-top: 9vh;
+        box-shadow: 0px 5px 8px #888888;
+        /*Los dos displays me aportan el mismo resultado en pantalla grande, ¿será igual en max-width?*/
+        .titulos {
+          width: 33%;
+          height: auto;
+          display: flex;
+          flex-flow: column wrap;
+          align-items: center;
+          // align-content: center;
+
+          img {
+            width: 18vw;
+            height: auto;
+            box-shadow: 0px 5px 8px #888888;
+            transition: all 0.9s ease-in-out;
+            -webkit-transition: all 0.9s ease-in-out;
+            -moz-transition: all 0.9s ease-in-out;
+            -ms-transition: all 0.9s ease-in-out;
+            -o-transition: all 0.9s ease-in-out;
+          }
+          img:hover {
+            transform: scale(1.1);
+            -webkit-transform: scale(1.1);
+            -moz-transform: scale(1.1);
+            -ms-transform: scale(1.1);
+            -o-transform: scale(1.1);
+          }
+          a {
+            text-decoration: none;
+            list-style-type: none;
+            color: rgb(89, 160, 231);
+            font-size: 120%;
+            transition: all 0.4s ease-in-out;
+            -webkit-transition: all 0.4s ease-in-out;
+            -moz-transition: all 0.4s ease-in-out;
+            -ms-transition: all 0.4s ease-in-out;
+            -o-transition: all 0.4s ease-in-out;
+          }
+          a:hover {
+            color: rgb(51, 51, 51);
+            transform: scale(1.1);
+            -webkit-transform: scale(1.1);
+            -moz-transform: scale(1.1);
+            -ms-transform: scale(1.1);
+            -o-transform: scale(1.1);
+          }
+        } //titulos
+        .quien {
+          display: flex;
+          flex-flow: column wrap;
+          justify-content: center;
+          width: 50%;
+          height: auto;
+
+          h1 {
+            font-family: "Oswald", -apple-system, "Segoe UI", "Open Sans", "Helvetica Neue", sans-serif;
+            font-size: 700;
+            font-weight: lighter;
+            letter-spacing: 2px;
+            color: rgb(93, 144, 196);
+            span {
+              /* color:rgb(161, 157, 157);*/
+              color: rgb(51, 51, 51);
+              letter-spacing: 1px;
+              font-weight: lighter;
+            } //span
+          } //h1
+          h3 {
+            font-weight: lighter;
+            color: rgb(161, 157, 157);
+            letter-spacing: 3px;
+          } //h3
+          #escrito {
+            font-family: "Oswald", sans-serif;
+            font-size: 500;
+            font-weight: lighter;
+            line-height: 2;
+          } //escrito
+        } //.quien
+        .datos {
+          display: flex;
+          justify-content: space-between;
+          ul {
+            padding: 0;
+            list-style-type: none;
+            li {
+              font-size: 100%;
+              display: flex;
+              flex-flow: row wrap;
+              justify-content: space-between;
+              order: 1, 2;
+              span:empty {
+                width: 3vw;
+              } //span vacio
+              .enunciado {
+                font-weight: lighter;
+                color: rgb(161, 157, 157);
+              } //enunciado
+              .respuesta a {
+                text-decoration: none;
+                list-style-type: none;
+                color: rgb(51, 51, 51);
+              } //.respuesta a
+            } //datos ul li
+          } //datos ul
+        } //datos
+      } //presentacion
+      header {
+        margin-top: 9vh;
+        /* grid */
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+      }
+      main {
+        display: grid;
+
+        .titulosH2 {
+          display: flex;
+          justify-content: center;
+          align-content: center;
+          font-family: "Oswald", Verdana, Geneva, Tahoma, sans-serif;
+          color: rgb(93, 144, 196);
+          margin-top: 9vh;
+          h2 {
+            font-family: "Oswald", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+              "Open Sans", "Helvetica Neue", sans-serif;
+            text-transform: uppercase;
+            font-size: 250%;
+            font-weight: lighter;
+            letter-spacing: 2px;
+          } //h2
+        } //titulosH2
+        .containerCentro {
+          display: grid;
+          grid-template-rows: 1fr 1fr;
+          grid-template-rows: repeat(auto-fit, minmax(240px, 1fr));
+          align-items: stretch;
+          .posicionEducacion {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+            .escuelas {
+              display: flex;
+              flex-flow: column nowrap;
+              justify-content: center;
+              width: 35vw;
+              height: auto;
+              background-color: white;
+              margin-top: 9vh;
+              box-shadow: 0px 5px 8px #888888;
+              padding: 0 2vw 0 2vw;
+              ul {
+                list-style: none;
+                display: flex;
+                flex-flow: column nowrap;
+                justify-content: flex-start;
+                padding: 0;
+                li {
+                  display: inline-flex;
+                  flex-flow: row nowrap;
+                  justify-content: flex-start;
+                  span {
+                    color: rgb(139, 138, 138);
+                  }
+                }
+              }
+            } //escuelas
+          } //posicionEducacion
+        } //containerCentro
+        .galeria {
+          margin-top: 4vh;
+        }
+        .galeria ul {
+          display: flex;
+          flex-flow: row wrap;
+          list-style-type: none;
+          margin: 0 -16px;
+          padding: 8px;
+        }
+        .galeria li {
+          //float:left;
+          width: 50%;
+          padding: 8px;
+          box-sizing: border-box;
+        }
+        .galeria li:last-child {
+          float: none;
+          // clear:left;
+        }
+        .galeria figure {
+          margin: 0;
+          position: relative;
+        }
+        .galeria figcaption {
+          position: absolute;
+          top: 8px;
+          left: 8px;
+          right: 8px;
+          bottom: 8px;
+          background: rgba(93, 144, 196, 0.7);
+          opacity: 0;
+          transition: opacity 0.3s ease;
+        }
+        .galeria figure:hover figcaption {
+          opacity: 1;
+        }
+
+        .galeria figcaption a {
+          font-family: "Oswald", Verdana, Geneva, Tahoma, sans-serif;
+          font-size: 550%;
+          font-weight: lighter;
+          padding: 1vh 3vw 1vh 3vw;
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          color: white;
+          text-decoration: none;
+          display: flex;
+          justify-content: center; /* align horizontal */
+          align-items: center; /* align vertical */
+        }
+
+        .galeria img {
+          max-width: 100%;
+          display: block;
+        }
+        #habilidades {
+          width: 80vw;
+          height: auto;
+          margin: 0;
+          padding: 0;
+
+          .row {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+            padding: 0;
+            margin: 0;
+            .habilidades1 {
+              width: 30vw;
+              height: auto;
+              background-color: white;
+              margin-top: 9vh;
+              box-shadow: 0px 5px 8px #888888;
+              padding: 3vw;
+              display: flex;
+              flex-flow: column nowrap;
+              align-items: center;
+              .encajeHab {
+                width: 30vw;
+                height: auto;
+                display: flex;
+                flex-flow: column nowrap;
+                .tituloBarra {
+                  display: flex;
+                  flex-flow: row nowrap;
+                  justify-content: space-between;
+                  width: 29vw;
+                  height: auto;
+                } //tituloBarra
+                .progresoBarra {
+                  margin-bottom: 2vh;
+                } //progresoBarra
+              } //encajeHab
+            } //habilidades1
+            .titulosH3 {
+              display: flex;
+              justify-content: center;
+              color: rgb(40, 88, 136);
+              font-family: "Oswald", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+                "Open Sans", "Helvetica Neue", sans-serif;
+              font-size: 150%;
+              font-weight: lighter;
+            } //h3
+            .habilidades2 {
+              width: 30vw;
+              height: auto;
+              background-color: white;
+              margin-top: 9vh;
+              box-shadow: 0px 5px 8px #888888;
+              padding: 3vw;
+              padding-top: 0;
+              display: flex;
+              flex-flow: column nowrap;
+              justify-content: center;
+              .encajeHab2 {
+                display: flex;
+                flex-flow: column nowrap;
+                justify-content: center;
+                .posicionCirculos {
+                  display: flex;
+                  flex-flow: row nowrap;
+                  margin-bottom: 10vh;
+                  margin-top: 10vh;
+                  .circulosInfo {
+                    display: flex;
+                    flex-flow: column nowrap;
+                    justify-content: center;
+                    .texto {
+                      margin-left: 2vw;
+                      font-family: "Montserrat", Verdana, Geneva, Tahoma, sans-serif;
+                      font-size: 500;
+                    } //texto
+                  } //circulosInfo
+                } //posicionCirculos
+
+                .adquiridas {
+                  width: 29vw;
+                  height: auto;
+                  margin: 0;
+                  padding: 0;
+                  display: flex;
+                  flex-flow: column nowrap;
+                  justify-content: space-between;
+
+                  .cajonAdq {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: 3vh;
+                  } //cajonAdq
+                } //adquiridas
+              } //encajeHab2
+            } //Habilidades2
+          } //row habilidades
+        } //habilidades
+      } //main
+      footer{
+          width:80vw;
+          height: auto;
+         
+          padding:0;
+          display:flex;
+          flex-flow:column nowrap;
+          justify-content: space-between;
+          
+
+          #contact{
+              display: flex;
+              flex-flow:row nowrap;
+              justify-content: space-around;
+              margin-top:9vh;
+              margin-bottom:5vh;
+              h4{
+                font-family: 'Oswald',-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                font-style: to-upper-case($string: "");
+                font-size:150%;
+                  font-weight:ligther;
+            }
+              .ultimo1{
+                  display:flex;
+                  flex-flow:column nowrap;
+                  justify-content: center;
+                  background-color: white;
+                  box-shadow: 0px 5px 8px #888888;
+                  width: 30vw;
+                  border:1px solid white;
+                  border-radius:20px;
+                  height: auto;
+                  
+                  -webkit-border-radius:20px;
+                  -moz-border-radius:20px;
+                  -ms-border-radius:20px;
+                  -o-border-radius:20px;
+.mensaje{
+                      display: flex;
+                      flex-flow: row nowrap;
+                      justify-content: center;
+                      i{
+                          color:rgb(40, 88, 136);
+                          font-size:350%;
+                      }
+
+                  }
+                  
+              }
+         ul{
+             list-style: none;
+         }
+
+         .redes{
+             display:flex;
+             flex-flow:column nowrap;
+             
+         }
+            }
+.ultimo2{
+    display:flex;
+    flex-flow:column nowrap;
+    justify-content: center;
+    background-color: white;
+    box-shadow: 0px 5px 8px #888888;
+    width: 30vw;
+    border:1px solid white;
+    border-radius:20px;
+    height: auto;
+    
+    -webkit-border-radius:20px;
+    -moz-border-radius:20px;
+    -ms-border-radius:20px;
+    -o-border-radius:20px;
+
+    .redes{
+        display: flex;
+        flex-flow:column nowrap;
+        justify-content: center;
+        width:30vw;
+
+    .iconsRed ul  {
+        display:flex;
+        flex-flow:row nowrap;
+        justify-content: space-evenly;
+        i{
+            color:rgb(40, 88, 136);
+            font-size:300%;
+        }
+    }
+    }
+}
+.copyright{
+    width:80vw;
+    height: auto;
+    display: flex;
+    flex-flow:row nowrap;
+    justify-content: center;
+    margin-bottom:3vh;
+}
+      }//footer
+    } //container
+  } //body
+} //html
